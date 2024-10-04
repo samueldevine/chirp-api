@@ -45,8 +45,8 @@ steps:
 substitutions:
   _INSTANCE_NAME: django-instance
   _REGION: us-central1
-  _SERVICE_NAME: polls-service
-  _SECRET_SETTINGS_NAME: django_settings
+  _SERVICE_NAME: api
+  _SECRET_SETTINGS_NAME: chirp_django_settings
 
 images:
   - "gcr.io/${PROJECT_ID}/${_SERVICE_NAME}"
