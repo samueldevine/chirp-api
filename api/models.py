@@ -14,11 +14,15 @@ class Chirp(models.Model):
 
 
 class Relationship(models.Model):
-    follower = models.ForeignKey(User, on_delete=models.CASCADE)
-    following = models.ForeignKey(User, on_delete=models.CASCADE)
+    follower = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="follower", db_column="follower"
+    )
+    followed = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="followed", db_column="followed"
+    )
 
     def __str__(self) -> str:
-        return f"{self.follower} follows {self.following}"
+        return f"{self.follower} follows {self.followed}"
 
 
 class Like(models.Model):
